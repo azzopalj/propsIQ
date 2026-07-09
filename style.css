@@ -1,0 +1,138 @@
+/* PropsIQ marketing site — palette mirrors the app's Theme.swift. */
+:root{
+  --brand:#5B4FE0; --brand-deep:#4B3FD0; --brand-soft:#EEECFB;
+  --positive:#16B364; --negative:#F04438; --warning:#F5A623; --neutral:#8A8A8F;
+  --bg:#0B0B10; --surface:#15151C; --surface-alt:#1E1E27;
+  --text:#F4F4F8; --text-2:#9A9AA6; --divider:#2A2A34;
+  --radius:18px; --maxw:1080px;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--font);
+  line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ---- Nav ---- */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:rgba(11,11,16,.72);border-bottom:1px solid var(--divider)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.nav-cta{font-size:14px;font-weight:700;color:#fff;background:var(--brand);
+  padding:9px 16px;border-radius:999px;transition:.15s}
+.nav-cta:hover{background:var(--brand-deep)}
+
+/* ---- Hero ---- */
+.hero{position:relative;padding:84px 0 72px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-30% 0 auto -10%;height:620px;
+  background:radial-gradient(60% 60% at 30% 20%,rgba(91,79,224,.35),transparent 70%);
+  filter:blur(20px);z-index:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;
+  gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;
+  letter-spacing:.02em;color:var(--brand-soft);background:rgba(91,79,224,.14);
+  border:1px solid rgba(91,79,224,.4);padding:6px 13px;border-radius:999px;margin-bottom:22px}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--positive)}
+h1{font-size:clamp(38px,6vw,60px);line-height:1.03;letter-spacing:-.03em;font-weight:800}
+h1 .grad{background:linear-gradient(100deg,#8b80ff,var(--brand));-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.sub{margin-top:20px;font-size:19px;color:var(--text-2);max-width:520px}
+.cta-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;
+  padding:14px 22px;border-radius:14px;transition:.15s}
+.btn-primary{color:#fff;background:var(--brand)}
+.btn-primary:hover{background:var(--brand-deep);transform:translateY(-1px)}
+.btn-ghost{color:var(--text);border:1px solid var(--divider);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--brand)}
+.legal-note{margin-top:18px;font-size:13px;color:var(--neutral)}
+
+/* ---- Phone mock (pure CSS card) ---- */
+.mock{position:relative;justify-self:center;width:300px;height:600px;border-radius:44px;
+  background:linear-gradient(180deg,#141626,#090A13);border:1px solid var(--divider);
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 8px #050509;padding:20px 16px;overflow:hidden}
+.mock::after{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);
+  width:96px;height:26px;background:#050509;border-radius:14px}
+.mock .m-logo{width:40px;height:40px;border-radius:11px;margin:8px auto 18px}
+.card{background:var(--surface);border:1px solid var(--divider);border-radius:16px;padding:14px;margin-bottom:12px}
+.pc-head{display:flex;justify-content:space-between;align-items:flex-start}
+.pc-name{font-weight:800;font-size:17px}
+.pc-sub{font-size:12px;color:var(--text-2);margin-top:2px}
+.pc-line{font-size:13px;margin-top:6px}.pc-line b{color:var(--positive)}
+.ring{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--positive) 302deg,rgba(255,255,255,.08) 0);position:relative}
+.ring::before{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--surface)}
+.ring span{position:relative;font-weight:800;font-size:18px;color:var(--positive)}
+.metrics{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--divider)}
+.metric{text-align:center;flex:1}
+.metric .v{font-weight:800;font-size:15px}
+.metric .l{font-size:10px;color:var(--text-2);letter-spacing:.04em;margin-top:2px}
+.g-green{color:var(--positive)}.g-amber{color:var(--warning)}.g-red{color:var(--negative)}
+.bars{display:flex;align-items:flex-end;gap:6px;height:78px;margin-top:6px}
+.bars i{flex:1;background:var(--positive);border-radius:4px;opacity:.9}
+.bars i.miss{background:rgba(255,255,255,.14)}
+
+/* ---- Section ---- */
+section{padding:72px 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 46px}
+.section-head h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;font-weight:800}
+.section-head p{margin-top:14px;color:var(--text-2);font-size:18px}
+.kicker{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
+
+/* ---- Features grid ---- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:var(--surface);border:1px solid var(--divider);border-radius:var(--radius);
+  padding:26px;transition:.18s}
+.feature:hover{border-color:rgba(91,79,224,.6);transform:translateY(-3px)}
+.feature .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(91,79,224,.16);margin-bottom:16px;font-size:22px}
+.feature h3{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.feature p{margin-top:8px;color:var(--text-2);font-size:15px}
+
+/* ---- Stat strip ---- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.stat .n{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.02em;
+  background:linear-gradient(100deg,#8b80ff,var(--brand));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .c{color:var(--text-2);font-size:14px;margin-top:4px}
+
+/* ---- CTA band ---- */
+.band{background:linear-gradient(120deg,var(--brand),var(--brand-deep));
+  border-radius:26px;padding:52px 40px;text-align:center;position:relative;overflow:hidden}
+.band h2{color:#fff;font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;font-weight:800}
+.band p{color:rgba(255,255,255,.85);margin-top:12px;font-size:18px}
+.band .btn-primary{background:#fff;color:var(--brand-deep);margin-top:26px}
+.band .btn-primary:hover{background:#f0f0ff}
+
+/* ---- Footer ---- */
+footer{border-top:1px solid var(--divider);padding:48px 0 60px;margin-top:40px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.foot .brand{font-size:17px}
+.foot-links{display:flex;gap:26px;flex-wrap:wrap}
+.foot-links a{color:var(--text-2);font-size:15px}.foot-links a:hover{color:var(--text)}
+.disclaimer{margin-top:28px;color:var(--neutral);font-size:13px;max-width:720px}
+
+/* ---- Legal / doc page ---- */
+.doc{max-width:760px;margin:0 auto;padding:56px 24px 40px}
+.doc h1{font-size:clamp(30px,5vw,44px);margin-bottom:6px}
+.doc .updated{color:var(--text-2);font-size:14px;margin-bottom:34px}
+.doc h2{font-size:22px;margin:34px 0 12px;letter-spacing:-.01em}
+.doc p,.doc li{color:#d7d7e0;font-size:16px;margin-bottom:12px}
+.doc ul{padding-left:22px;margin-bottom:12px}
+.doc li{margin-bottom:8px}
+.doc a{color:#a99dff;text-decoration:underline}
+.doc .back{display:inline-flex;align-items:center;gap:8px;color:var(--text-2);font-size:15px;margin-bottom:30px}
+.doc .back:hover{color:var(--text)}
+.doc .callout{background:var(--surface);border:1px solid var(--divider);border-left:3px solid var(--brand);
+  border-radius:12px;padding:16px 18px;margin:20px 0;color:var(--text-2);font-size:15px}
+
+@media(max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .hero{padding:56px 0 48px}
+  .mock{order:-1;transform:scale(.92)}
+  .grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr);gap:28px}
+}
